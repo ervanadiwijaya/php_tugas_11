@@ -53,7 +53,8 @@ class KaryawanController extends Controller
             'nama' => $request->input('nama'),
             'jabatan' => $request->input('jabatan'),
             'umur' => $request->input('umur'),
-            'alamat' => $request->input('alamat')
+            'alamat' => $request->input('alamat'),
+            'foto' => $request->input('foto')
         ]);
 
         return response()->json([
@@ -107,7 +108,7 @@ class KaryawanController extends Controller
         $karyawan->jabatan = $request->input('jabatan');
         $karyawan->umur = $request->input('umur');
         $karyawan->alamat = $request->input('alamat');
-        $karyawan->foro = $request->input('foto');
+        $karyawan->foto = $request->input('foto');
 
         $karyawan->update();
 
@@ -132,7 +133,6 @@ class KaryawanController extends Controller
         return response()->json([
             'code' => 'SUCCESS',
             'message' => 'berhasil dihapus',
-            'data' => $karyawan
         ], 200);
     }
 }
